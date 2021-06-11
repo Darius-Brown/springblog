@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 class HelloController {
 
-    @GetMapping("hello")
+    @GetMapping("/hello")
     @ResponseBody
     public String hello() {
+
         return "Hello from Spring Boot!";
     }
 
@@ -19,15 +20,11 @@ class HelloController {
     public String hello(
             @PathVariable String name,
             Model model
-    ){
+    ) {
+        String bio = "Testing out Thymeleaf";
+        model.addAttribute("bio", bio);
         model.addAttribute("UsersName", name);
         return "helloUser";
-    }
-
-    @GetMapping("/hello/{name}")
-    @ResponseBody
-    public String sayHello(@PathVariable String name){
-        return "Hello from Spring bot to " + name + " in Marco!";
     }
 
 }

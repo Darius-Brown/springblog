@@ -4,6 +4,7 @@ import com.codeup.springblog.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,12 @@ public class userController {
 
 
         model.addAttribute("users", listOfUsers);
+        return "users";
+    }
+
+    @GetMapping("/user")
+    @ResponseBody
+    public String getTheStringUser(){
         return "users";
     }
 }
