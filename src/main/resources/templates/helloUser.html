@@ -5,10 +5,11 @@
     <title>HelloUser</title>
 </head>
 <body>
-<h3 th:text="${'Hello there' + user.fullName}"> Hello World</h3>
+<h3>Hello there <span th:text="${UsersName}"></span></h3>
 
-<div th:each="user : ${users}">
+<h3 th:text="${'Hello there ' + UsersName}"></h3>
 
-</div>
+<p th:text="${bio}"></p>
+
 </body>
 </html>
