@@ -8,7 +8,8 @@
 <div>
     a single Post
     <h2 th:each="post : ${posts}">
-        <h3 th:text="${post}"></h3>
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="${post.body}" />
     </h2>
 </div>
 
