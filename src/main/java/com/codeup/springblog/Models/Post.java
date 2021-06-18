@@ -1,7 +1,21 @@
 package com.codeup.springblog.Models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Posts")
 public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    //Ads need titles
+    @Column(nullable = false, length = 100 )
     private String title;
+
+    //ads need description
+    @Column(nullable = false, length = 255)
     private String body;
 
     public Post() {
